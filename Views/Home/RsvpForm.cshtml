@@ -1,0 +1,48 @@
+﻿@model PartyInvites.Models.GuestResponse
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>RSVP Form</title>
+    <link href="~/css/Styles.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+</head>
+
+<body>
+    <form method="post">
+        <h5 class="bg-primary text-white text-center m-2 p-2"> 
+        RSVP
+        </h5>
+        <div asp-validation-summary="All">
+
+        </div>
+        <div class="form-group">
+            <label asp-for="Name">Name: </label>
+            <input asp-for="Name" placeholder=" Your Name" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label asp-for="Email">Email: </label>
+            <input asp-for="Email" placeholder="Your Email" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Phone">Phone Number: </label>
+            <input asp-for="Phone" placeholder="Your Phone number" class="form-control"/>
+        </div>
+        <div class="form-group">
+           <label asp-for="WillAttend">Are you attending: </label>
+           <select asp-for="WillAttend" class="form-control">
+            <option value=""> Choose An Option.</option>
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+            <option value="">Maybe</option>
+           </select>
+        </div>
+        <input type="submit" value="RSVP" class="btn btn-primary"/>
+    </form>
+</body>
+</html>
